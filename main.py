@@ -2,10 +2,11 @@ import logging
 import telegram
 from bs4 import BeautifulSoup
 import requests
+import os
 from telegram import ForceReply, Update
 from telegram.ext import Application, CommandHandler, ContextTypes, MessageHandler, filters
 
-TOKEN = 'YOUR-TOKEN'
+TOKEN = os.getenv("TOKEN")  # 環境変数から取得
 bot = telegram.Bot(TOKEN)
 
 logging.basicConfig(
